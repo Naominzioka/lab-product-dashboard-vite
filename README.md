@@ -1,120 +1,39 @@
-# Lab: Product Dashboard Manager
+## Product Dashboard Project
 
-## Introduction
 
-Your company is developing an **e-commerce platform**, and you have been assigned to create a **Product Dashboard**. This dashboard will dynamically display a list of products, allow users to filter products by availability, and apply **conditional rendering** to display different UI states.
+## About My Project
 
-Your goal is to structure the React components, apply styles using **CSS Modules and Material UI**, and ensure that the dashboard passes all pre-written automated tests using **Jest and React Testing Library**.
+I created a product dashboard using **React** to show how a simple store inventory works. It takes a list of products and displays them on the screen in an organized way. The main goal of this project was to practice how data moves between different parts of a React app.
 
----
+## What it Does
 
-## **Challenge**
-1. Update Existing Element of the title
-2. Create New Elements for each product
+* **Shows Products**: Each product displays its name, price, and whether it is in stock.
+* **Filter Buttons**: I added buttons so you can view all items, only the items in stock, or only the items that are sold out.
+* **Out of Stock Styling**: If an item is out of stock, the card looks different (it gets a red border) so the user can see the status easily.
+* **Remove Button**: Every product has a button that deletes it from the dashboard. When you click it, the list updates immediately.
 
-## **Bonus Challenge**
-3. Delete Element
+## How I Built It
 
----
+* **React State**: I used `useState` to keep track of the product list and which filter is active.
+* **Props**: I learned how to pass data from the main `App` component down to the `ProductList` and then into the `ProductCard`.
+* **Lifting State Up**: To make the "Remove" button work, I wrote a function in the parent component and passed it down so the child component could call it.
+* **Material UI**: I used the **Grid system** to make sure the cards stay in a nice row and look good on different screen sizes.
+* **Conditional Logic**: I used ternary operators (`? :`) to dynamically change styles and text based on whether a product is in stock or not.
+* **CSS Modules**: I used a `.module.css` file to style the cards and used logic to add a special `outOfStockClass` when needed.
 
-## **Instructions**
+## Components
 
-### **1️⃣ Fork and Clone the Repository**  
-1. Go to the provided **GitHub repository link**.
-2. **Fork** the repository to your GitHub account.
-3. **Clone** the forked repository to your local machine:
-   ```sh
-   git clone <your-forked-repository-url>
-   cd product-dashboard
-   ```
-4. Open the project in **VSCode**.
-5. Run the following command to install all necessary dependencies:
-   ```sh
-   npm install
-   ```
+* **App.js**: This is where the main logic of the app lives and where the product data is stored.
+* **ProductList.js**: This component takes the list and maps it into a grid of items.
+* **ProductCard.js**: This is the individual box for each product that holds the info and the "Remove" button.
 
-### **2️⃣ Update Existing Element**
-- Modify the existing **header** element to display the **Product Dashboard title**.
-- Select the **DOM element** with the ID of `header`.
-- Store it in a variable called `dashboardTitle`.
-- Change the **textContent** of `dashboardTitle` to **"Product Dashboard"**.
+## To run this project
 
-### **3️⃣ Create New Elements for Each Product**
-- Loop through every product in the dataset.
-- Each product is stored in an **array**.
-- Inside the loop, create and configure the following **new elements**:
-  - **`div` element (`productContainer`)** to hold product details.
-  - **`h3` element (`productTitle`)** to display the product name.
-  - **`p` element (`productPrice`)** to show the product's price.
-  - **`p` element (`productAvailability`)** to indicate if the product is **in stock or out of stock**.
-  - **`img` element (`productImage`)** to display the product image.
+1. **Clone the project** or download the files.
+2. Open your terminal in your project folder 
+3. run `npm install` to install dependencies
 
-### **4️⃣ Append Elements to the DOM**
-- Select the element with the ID `product-list` and store it in a variable called `productList`.
-- Append `productTitle`, `productPrice`, `productAvailability`, and `productImage` to `productContainer`.
-- Append `productContainer` to `productList`.
+4. Run `npm test` to make sure everything is working correctly.
 
-### **5️⃣ Implement Conditional Rendering**
-- Products that are **out of stock** should be **styled differently**.
-- Use **CSS Modules** to apply a different background color to out-of-stock items.
-
----
-
-## **Bonus Challenge: Delete Element**
-- Implement a feature that allows users to **remove a product** from the dashboard.
-- Add a **"Remove" button** next to each product.
-- When clicked, the button should **delete the product element** from the page.
-
----
-
-## **BONUS: Remove Elements from the DOM**
-
-We know how to add elements and change their attributes. What if we want to
-remove an element from a page?
-
-### `removeChild()`
-
-We use `removeChild()`, as you might guess, to remove a particular child of an
-element:
-
-```js
-someElement.removeChild(someChildElement);
-```
-
-Let's take a look at a more complex example:
-
-```js
-const productList = document.getElementById("product-list");
-const firstProduct = productList.querySelector("div:first-child");
-productList.removeChild(firstProduct);
-```
-
-Here you can see the power of `querySelector()`: we can use it to find the
-first product in the list. We then pass that element as the argument to our
-`removeChild` method, which removes it from the dashboard.
-
-What if we want to remove the entire product list?
-
-### `element.remove()`
-
-We can just call `remove()` on the element itself:
-
-```js
-productList.remove();
-```
-
-And it's gone!
-
----
-
-## **Resources**
-
-- [React Documentation](https://react.dev)
-- [CSS Modules Documentation](https://github.com/css-modules/css-modules)
-- [Material UI Documentation](https://mui.com)
-- [Jest Testing Framework](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com)
-- [document.createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
-- [append()](https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
-- [removeChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
-- [element.remove()](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove)
+5. Run `npm run dev` to start the app in your browser.
+6. Copy the link provided .(usually http://localhost:5173/)
