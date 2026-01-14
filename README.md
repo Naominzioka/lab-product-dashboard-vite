@@ -1,5 +1,6 @@
 ## Product Dashboard Project
 
+![DashBoard Preview](./public/Screenshot.png)
 
 ## About My Project
 

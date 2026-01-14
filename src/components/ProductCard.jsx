@@ -5,8 +5,9 @@ import { Button } from '@mui/material';
 
 
 const ProductCard = ({ product, onRemove }) => {
-  //i use 'outOfStockClass' only if the item is not in stock
-  const cardClass = product.inStock ? styles.productCard : styles.outOfStockClass;
+   // I am using Template Literals (backticks) to combine multiple CSS classes.
+   // This allows the card to keep its layout while adding red highlights when out of stock.
+  const cardClass = `${styles.productCard} ${!product.inStock ? styles.outOfStockClass : ''}`;
 
   {/*  Apply conditional class to <div> above for out-of-stock items */ }
   return (

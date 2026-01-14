@@ -3,8 +3,13 @@
 .productCard {
   border: 1px solid #eee;
   border-radius: 8px;
-  
+  padding: 16px;
+  max-width: 350px;
+  margin: 10px auto;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 
 /*  Add special styling for out-of-stock products */
 /* This handles the Out of Stock styling specifically */
